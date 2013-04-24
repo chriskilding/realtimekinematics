@@ -1,7 +1,7 @@
 define(function (require) {
 
 	// Import dependencies.
-	var rstat = require("./RunningArrayStat");
+	var rstat = require("src/kinematics/RunningArrayStat");
 	
   var runningArrayStat;
   

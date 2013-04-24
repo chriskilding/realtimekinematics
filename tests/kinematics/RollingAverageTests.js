@@ -1,12 +1,12 @@
 define(function (require) {
 
 	// Import depdendencies.
-	var rollavg = require("./RollingAverage");
+	var rollavg = require("src/kinematics/RollingAverage");
 	
   var avg;
   
 	// Define the QUnit module and lifecycle.
-	QUnit.module("kinematics/RollingAverage", { 
+	QUnit.module("RollingAverage", { 
 		setup: function () {
       avg = new rollavg();
 		},

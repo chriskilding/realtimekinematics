@@ -1,7 +1,7 @@
 define(function (require) {
 
 	// Import depdendencies.
-	var rstat = require("./RunningStat");
+	var rstat = require("src/kinematics/RunningStat");
 	
   var runningStat;
   

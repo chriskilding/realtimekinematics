@@ -1,7 +1,7 @@
 define(function (require) {
 
 	// Import dependencies.
-	var Rounding = require("./Rounding");
+	var Rounding = require("src/kinematics/Rounding");
 	  
 	// Define the QUnit module and lifecycle.
 	QUnit.module("kinematics/Rounding", { 

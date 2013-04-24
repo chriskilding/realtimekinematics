@@ -1,7 +1,7 @@
 define(function (require) {
 
 	// Import depdendencies.
-	var straightstatlib = require("./RunningLineStraightnessStat");
+	var straightstatlib = require("src/kinematics/RunningLineStraightnessStat");
 	
   var straightStat;
   

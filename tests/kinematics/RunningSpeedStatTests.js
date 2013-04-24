@@ -1,7 +1,7 @@
 define(function (require) {
 
 	// Import depdendencies.
-	var speedstatlib = require("./RunningSpeedStat");
+	var speedstatlib = require("src/kinematics/RunningSpeedStat");
 	
   var speedStat;
   

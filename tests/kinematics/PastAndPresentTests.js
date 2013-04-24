@@ -1,12 +1,12 @@
 define(function (require) {
 
 	// Import depdendencies.
-	var pnpLib = require("./PastAndPresent");
+	var pnpLib = require("src/kinematics/PastAndPresent");
 	
   var pnp;
   
 	// Define the QUnit module and lifecycle.
-	QUnit.module("kinematics/PastAndPresent", { 
+	QUnit.module("PastAndPresent", { 
 		setup: function () {
       pnp = new pnpLib();
 		},
