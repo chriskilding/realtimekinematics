@@ -1,0 +1,13 @@
+//Copyright 2012, etc.
+
+(function (root, factory) {
+    if (typeof define === 'function' && define.amd) {
+        // AMD.
+        define(['js-signals', 'underscore', 'socketio', 'zig'], factory);
+    } else {
+        // Browser globals
+        root.mocap = factory(root.Signal, root._, root.io, root.zig);
+    }
+}(this, function (Signal, _, io, zig) {
+
+
