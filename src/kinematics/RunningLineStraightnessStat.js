@@ -30,7 +30,10 @@ define([
         } else {
             // No history yet - set the latestCoords to be the startCoords
             // Delta is zero anyway so no change to cumulativeActualDistance
-            this.startCoords = latestCoords.dup();
+            // Duplicate the array by value to ensure no funny business
+            this.startCoords = latestCoords.map(function (val) {
+                return val;
+            });
         }
     };
     

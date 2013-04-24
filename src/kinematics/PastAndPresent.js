@@ -1,20 +1,39 @@
 "use strict";
 
 define([
-    "vendor/sylvester"
-], function (Sylvester) {
+], function () {
 
+    var distanceSquaredBetween = function (a, b) {
+        if (a.length !== b.length) {
+            return null;
+        }
+        
+        var distSquared = a.map(function (aElement, index) {
+            return Math.pow(aElement - b[index], 2);
+        }).reduce(function (c, d) {
+            return c + d;
+        });
+    };
+    
+    var distanceBetween = function (a, b) {
+        var squared = distanceSquaredBetween(a, b);
+        
+        if (squared) {
+            return Math.sqrt(squared);
+        } else {
+            return null;
+        }
+    };
+    
     function PastAndPresent() {
         // A reusable 3vec for holding the coords passed into push method;
-        // if we create just ONE vector now instead of a new one every time push is called,
-        // we will avoid filling up memory with needless throwaway vectors
-        this.latestCoords = Sylvester.Vector.Zero(3);
-        this.previousCoords = Sylvester.Vector.Zero(3);
+        this.latestCoords = [0, 0, 0];
+        this.previousCoords = [0, 0, 0];
     }
     
     
     PastAndPresent.prototype.push = function (coords, operationFunc, context) {
-        this.latestCoords.setElements(coords);
+        this.latestCoords = coords;
         
         var returnVal;
         if (operationFunc) {
@@ -23,24 +42,24 @@ define([
         }
         
         // Update the currentCoords
-        this.previousCoords.setElements(coords);
+        this.previousCoords = coords;
         
         return returnVal;
     };
     
     PastAndPresent.prototype.clear = function () {
-        this.latestCoords.setElements([0, 0, 0]);
-        this.previousCoords.setElements([0, 0, 0]);
+        this.latestCoords = [0, 0, 0];
+        this.previousCoords = [0, 0, 0];
     };
     
     // Frequently used callback function
     PastAndPresent.prototype.getDistance = function (previousCoords, latestCoords) {
         // Get Euclidean distance between this point and the last
-        return previousCoords.distanceFrom(latestCoords);
+        return distanceBetween(previousCoords, latestCoords);
     };
     
     PastAndPresent.prototype.getDistanceFromLatest = function (otherCoords) {
-        return this.latestCoords.distanceFrom(otherCoords);
+        return distanceBetween(this.latestCoords, otherCoords);
     };
     
     return PastAndPresent;
