@@ -5,7 +5,7 @@
 define([
     'src/kinematics/RunningArrayStat',
     'src/kinematics/Rounding',
-    'lib/sylvester'
+    'vendor/sylvester'
 ], function (RunningArrayStat, Rounding, Sylvester) {
 
     // Expects Sylvester vectors!

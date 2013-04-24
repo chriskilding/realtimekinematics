@@ -4,7 +4,7 @@
         "runningkinematics": "runningkinematics"
     },
     "include": ["tools/almond", "runningkinematics"],
-    "exclude": ["lib/sylvester"],
+    "exclude": [],
     "out": "../dist/realtimekinematics.js",
     "wrap": {
         "startFile": "wrap.start",

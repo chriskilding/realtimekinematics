@@ -7,7 +7,7 @@
 (function (root, factory) {
     if (typeof define === 'function' && define.amd) {
         // AMD.
-        define(['lib/sylvester'], factory);
+        define(['sylvester'], factory);
     } else {
         // Browser globals
         root.realtimekinematics = factory(root.Sylvester);

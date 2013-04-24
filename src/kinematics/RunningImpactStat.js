@@ -5,9 +5,8 @@
 define([
     'src/kinematics/RunningStat',
     'src/kinematics/NumericalDifferentiator',
-    'src/kinematics/PastAndPresent',
-    'lib/sylvester'
-], function (RunningStat, NumericalDifferentiator, PastAndPresent, Sylvester) {
+    'src/kinematics/PastAndPresent'
+], function (RunningStat, NumericalDifferentiator, PastAndPresent) {
 
     // Rate at which velocity changes with time
     // is dv/dt as delta t approaches 0

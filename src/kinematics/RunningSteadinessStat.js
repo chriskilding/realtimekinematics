@@ -3,9 +3,8 @@
 // Steadiness stat
 define([
     'src/kinematics/PastAndPresent',
-    'src/kinematics/RollingAverage',
-    'lib/sylvester'
-], function (PastAndPresent, RollingAverage, Sylvester) {
+    'src/kinematics/RollingAverage'
+], function (PastAndPresent, RollingAverage) {
   
     function RunningSteadinessStat() {
         this.pnp = new PastAndPresent();

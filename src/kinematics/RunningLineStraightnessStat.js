@@ -1,9 +1,8 @@
 "use strict";
 
 define([
-    'src/kinematics/PastAndPresent',
-    'lib/sylvester'
-], function (PastAndPresent, Sylvester) {
+    'src/kinematics/PastAndPresent'
+], function (PastAndPresent) {
     /*
     * One way to get straightness of the line:
     * the "straightness" of a line, interpreted as the property that it minimizes distances between its points

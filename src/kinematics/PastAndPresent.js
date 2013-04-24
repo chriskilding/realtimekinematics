@@ -1,7 +1,7 @@
 "use strict";
 
 define([
-    "lib/sylvester"
+    "vendor/sylvester"
 ], function (Sylvester) {
 
     function PastAndPresent() {

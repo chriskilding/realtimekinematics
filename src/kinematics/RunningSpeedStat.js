@@ -2,9 +2,8 @@
 
 define([
     'src/kinematics/RunningStat',
-    'src/kinematics/PastAndPresent',
-    'lib/sylvester'
-], function (RunningStat, PastAndPresent, Sylvester) {
+    'src/kinematics/PastAndPresent'
+], function (RunningStat, PastAndPresent) {
   
     function RunningSpeedStat() {
         this.pnp = new PastAndPresent();
