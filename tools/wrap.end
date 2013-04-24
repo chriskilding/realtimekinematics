@@ -1,21 +1,23 @@
     //Register in the values from the outer closure for common dependencies
     //as local almond modules
-    define('js-signals', function () {
-        return Signal;
-    });
-    define('underscore', function () {
-        return _;
-    });
-    define('socketio', function () {
-        return io;
-    });
-    define('zig', function () {
-        return zig;
+    define('sylvester', function () {
+        return {
+            Sylvester: Sylvester,
+            Vector: Vector,
+            Matrix: Matrix,
+            Line: Line,
+            Plane: Plane,
+            $V: $V,
+            $M: $M,
+            $L: $L,
+            $P: $P
+        }
+        
     });
     
     //Use almond's special top-level, synchronous require
     // to trigger factory functions,
     // get the final module value,
     // and export it as the public value.
-    return require('mocap');
+    return require('runningkinematics');
 }));

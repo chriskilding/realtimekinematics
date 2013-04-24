@@ -1,11 +1,11 @@
 {
     "baseUrl": "../lib",
     "paths": {
-        "mocap": "../mocap"
+        "runningkinematics": "../runningkinematics"
     },
-    "include": ["../tools/almond", "mocap"],
-    "exclude": ["js-signals", "underscore", "socketio", "zig"],
-    "out": "../dist/mocap.js",
+    "include": ["../tools/almond", "runningkinematics"],
+    "exclude": ["sylvester", "mocap"],
+    "out": "../dist/realtimekinematics.js",
     "wrap": {
         "startFile": "wrap.start",
         "endFile": "wrap.end"

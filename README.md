@@ -6,10 +6,7 @@ This library can be used either the 'normal' way (with global variables) or with
 ## Dependencies
 **Core dependencies:** this library *must* have access to the following third-party libraries:
 
-- underscore
-
-**Optional dependencies:** , the library also needs one or more of the following:
-
+- sylvester
 
 ## To build
 1. First install Node.js from your favorite source.
