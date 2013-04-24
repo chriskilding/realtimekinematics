@@ -1,5 +1,5 @@
 define([
-  'sylvester'
+  'lib/sylvester'
 ], function(Sylvester) {
 
   function PastAndPresent() {

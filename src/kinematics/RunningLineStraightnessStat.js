@@ -1,6 +1,6 @@
 define([
-  'kinematics/PastAndPresent',
-  'sylvester'
+  'src/kinematics/PastAndPresent',
+  'lib/sylvester'
 ], function(PastAndPresent, Sylvester) {   
    /*
     * One way to get straightness of the line:

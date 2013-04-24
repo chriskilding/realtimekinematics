@@ -1,8 +1,8 @@
 // A metric for the Newtonian acceleration of a movement
 define([
-  'kinematics/RunningStat',
-  'kinematics/RunningSpeedStat',
-  'kinematics/PastAndPresent'
+  'src/kinematics/RunningStat',
+  'src/kinematics/RunningSpeedStat',
+  'src/kinematics/PastAndPresent'
 ], function(RunningStat, RunningSpeedStat, PastAndPresent) {
 
   // We look at the 'difference of differences'

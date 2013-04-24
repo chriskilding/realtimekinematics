@@ -1,9 +1,9 @@
 // Monitors freeness or boundness for a 'system' of joints
 // e.g. hand, wrist, elbow, shoulder
 define([
-  'kinematics/RunningArrayStat',
-  'kinematics/Rounding',
-  'sylvester'
+  'src/kinematics/RunningArrayStat',
+  'src/kinematics/Rounding',
+  'lib/sylvester'
 ], function(RunningArrayStat, Rounding, Sylvester) {
 
   // Expects Sylvester vectors!

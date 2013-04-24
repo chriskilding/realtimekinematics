@@ -1,9 +1,9 @@
 // A metric for the force (weight or strength) of a movement
 define([
-  'kinematics/RunningStat',
-  'kinematics/NumericalDifferentiator',
-  'kinematics/PastAndPresent',
-  'sylvester'
+  'src/kinematics/RunningStat',
+  'src/kinematics/NumericalDifferentiator',
+  'src/kinematics/PastAndPresent',
+  'lib/sylvester'
 ], function(RunningStat, NumericalDifferentiator, PastAndPresent, Sylvester) {
 
   // Rate at which velocity changes with time

@@ -7,11 +7,11 @@
 (function (root, factory) {
     if (typeof define === 'function' && define.amd) {
         // AMD.
-        define(['sylvester', 'mocap'], factory);
+        define(['lib/sylvester'], factory);
     } else {
         // Browser globals
-        root.realtimekinematics = factory(root.Sylvester, root.Mocap);
+        root.realtimekinematics = factory(root.Sylvester);
     }
-}(this, function (Sylvester) {
+}(this, function (Sylvester, Mocap) {
 
 

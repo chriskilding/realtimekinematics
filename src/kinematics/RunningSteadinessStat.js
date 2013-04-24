@@ -1,8 +1,8 @@
 // Steadiness stat
 define([
-  'kinematics/PastAndPresent',
-  'kinematics/RollingAverage',
-  'sylvester'
+  'src/kinematics/PastAndPresent',
+  'src/kinematics/RollingAverage',
+  'lib/sylvester'
 ], function(PastAndPresent, RollingAverage, Sylvester) {
   
   function RunningSteadinessStat() {    

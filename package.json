@@ -3,10 +3,7 @@
   "volo": {
     "baseUrl": "lib",
     "dependencies": {
-      "js-signals": "github:millermedeiros/js-signals/master",
-      "underscore": "github:amdjs/underscore/1.3.3",
-      "socketio": "github:learnboost/socket.io/0.9.10",
-      "zig": "//cdn.zigfu.com/zigjs/zig.min"
+      "sylvester": "github:jcoglan/sylvester/0.1.3"
     }
   }
 }

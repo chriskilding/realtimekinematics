@@ -1,7 +1,7 @@
 // A RunningStat scaled up for a whole vector (or 1D matrix)
 define([
-  'kinematics/RunningStat',
-  'kinematics/Rounding'
+  'src/kinematics/RunningStat',
+  'src/kinematics/Rounding'
 ], function(RunningStat, Rounding) {
   
   // Rounding strategy you want applied

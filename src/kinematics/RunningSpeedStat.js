@@ -1,7 +1,7 @@
 define([
-  'kinematics/RunningStat',
-  'kinematics/PastAndPresent',
-  'sylvester'
+  'src/kinematics/RunningStat',
+  'src/kinematics/PastAndPresent',
+  'lib/sylvester'
 ], function(RunningStat, PastAndPresent, Sylvester) {
   
   function RunningSpeedStat() {    

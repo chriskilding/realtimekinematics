@@ -1,10 +1,10 @@
 {
-    "baseUrl": "../lib",
+    "baseUrl": "../",
     "paths": {
-        "runningkinematics": "../runningkinematics"
+        "runningkinematics": "runningkinematics"
     },
-    "include": ["../tools/almond", "runningkinematics"],
-    "exclude": ["sylvester", "mocap"],
+    "include": ["tools/almond", "runningkinematics"],
+    "exclude": ["lib/sylvester"],
     "out": "../dist/realtimekinematics.js",
     "wrap": {
         "startFile": "wrap.start",
