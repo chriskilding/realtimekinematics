@@ -16,19 +16,19 @@ define(function (require) {
 	});
 	
 	QUnit.test("getMetric - resets to zero upon clearing", function () {     
-    speedStat.push([20, 20, 0]);
-    speedStat.clear();
-            
-    QUnit.equal(speedStat.getMetric(), 0, true);    
+        speedStat.push([20, 20, 0]);
+        speedStat.clear();
+                
+        QUnit.equal(speedStat.getMetric(), 0, true);    
 	});
 	
 	QUnit.test("getMetric - starts at zero", function () {             
-    QUnit.equal(speedStat.getMetric(), 0, true);    
+        QUnit.equal(speedStat.getMetric(), 0, true);    
 	});
   
 	QUnit.test("getMetric - add one data point, still zero", function () { 
-    speedStat.push([20, 20, 0]);
-    QUnit.equal(speedStat.getMetric(), 0, true);  
+        speedStat.push([20, 20, 0]);
+        QUnit.equal(speedStat.getMetric(), 0, true);  
 	});
 	
 });

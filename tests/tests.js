@@ -2,7 +2,7 @@
 "use strict";
     
 var shim = {
-    "sylvester": {
+    "lib/sylvester": {
         deps: [],
         exports: "Sylvester",
         init: function (bar) {
