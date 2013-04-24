@@ -1,6 +1,8 @@
 "use strict";
 
-// A RunningStat scaled up for a whole vector (or 1D matrix)
+// A RunningArrayStat performs the same function
+// as a RunningStat, but can accept whole vectors
+// rather than just individual numerical values.
 define([
     'src/kinematics/RunningStat',
     'src/kinematics/Rounding'

@@ -1,7 +1,10 @@
 "use strict";
 
-// Enumerates the rounding strategies
-// could be used in RunningArrayStat
+// Rounding is a collection of helpers for taking
+// a bunch of vectors and producing a single vector
+// from them, composed of the highest / lowest /
+// (insert criteria here) values from each vector.
+// It also enumerates the 'rounding' strategies.
 define([
 ], function () {
     var strategies = {

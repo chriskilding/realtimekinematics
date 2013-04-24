@@ -1,6 +1,9 @@
 "use strict";
 
-// Steadiness stat
+// Monitors how much an object is moving over
+// time using an EWMA. Lower values indicate
+// the object is relatively stationary; higher
+// values indicate it is less stable.
 define([
     'src/kinematics/PastAndPresent',
     'src/kinematics/RollingAverage'

@@ -1,5 +1,10 @@
 "use strict";
 
+// Performs inter-frame analysis of the positions
+// of vectors to determine the straight-line distance
+// which the object has travelled during the time
+// window between the frames, and computes its speed
+// from this.
 define([
     'src/kinematics/RunningStat',
     'src/kinematics/PastAndPresent'

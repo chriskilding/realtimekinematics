@@ -1,9 +1,14 @@
 "use strict";
 
-// An algorithm for accurately computing running variance
+// The core of several other modules in this library, RunningStat
+// accepts new numerical data through push(), and computes some
+// intermediate values in O(1) time that allow it to then compute
+// the variance, mean, standard deviation, and total number of
+// data points in O(1) time at any point.
+//
+// This uses an algorithm for accurately computing running variance
 // Ported from the C++ version by John D. Cook
 // available at http://www.johndcook.com/standard_deviation.html
-
 define([
 ], function () {
 

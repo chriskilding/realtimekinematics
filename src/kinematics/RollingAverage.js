@@ -1,5 +1,7 @@
 "use strict";
 
+// Computes an Exponentially Weighted Moving Average
+// every time it is updated, with a customizable decay value.
 define([
 ], function () {
   
