@@ -5,23 +5,8 @@
 define([
     'src/kinematics/RunningArrayStat',
     'src/kinematics/Rounding',
-    'vendor/sylvester'
-], function (RunningArrayStat, Rounding, Sylvester) {
-
-    // Expects Sylvester vectors!
-    var angleBetweenTwoVectors = function (a, b) {
-        // See http://chortle.ccsu.edu/vectorlessons/vch10/vch10_5.html
-        // We are dealing with non-unit vectors so...
-        // (1) normalize each vector
-        var normA = a.toUnitVector();
-        var normB = b.toUnitVector();
-        
-        // (2) compute the dot product
-        var product = normA.dot(normB);
-        
-        // (3) take the arc cos to get the angle.
-        return Math.acos(product);
-    };
+    "src/util/Vector"
+], function (RunningArrayStat, Rounding, Vector) {
     
     // pass in an array of the associated Joint pairs you'll track
     // for a hand that would be:
@@ -35,9 +20,8 @@ define([
         // Need as many running stats as we do joints tracked
         this.rstat = new RunningArrayStat(this.jointPairs.length);
         
-        // Create vectors once, not millions of times!
-        this.vecA = Sylvester.Vector.Zero();
-        this.vecB = Sylvester.Vector.Zero();
+        this.vecA = [0, 0, 0];
+        this.vecB = [0, 0, 0];
     }
     
     // Needs WHOLE skeleton
@@ -61,10 +45,10 @@ define([
             var angle = null;
             
             if (firstJoint.data && secondJoint.data) {
-                that.vecA.setElements(firstJoint.data.position);
-                that.vecB.setElements(secondJoint.data.position);
+                that.vecA = firstJoint.data.position;
+                that.vecB = secondJoint.data.position;
                 
-                angle = angleBetweenTwoVectors(that.vecA, that.vecB);
+                angle = Vector.angleBetween(that.vecA, that.vecB);
             }
             
             return angle;

@@ -1,19 +1,5 @@
     //Register in the values from the outer closure for common dependencies
     //as local almond modules
-    define('sylvester', function () {
-        return {
-            Sylvester: Sylvester,
-            Vector: Vector,
-            Matrix: Matrix,
-            Line: Line,
-            Plane: Plane,
-            $V: $V,
-            $M: $M,
-            $L: $L,
-            $P: $P
-        };
-        
-    });
     
     //Use almond's special top-level, synchronous require
     // to trigger factory functions,

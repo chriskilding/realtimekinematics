@@ -1,8 +1,9 @@
 "use strict";
 
 define([
-    'src/kinematics/PastAndPresent'
-], function (PastAndPresent) {
+    'src/kinematics/PastAndPresent',
+    "src/util/Vector"
+], function (PastAndPresent, Vector) {
     /*
     * One way to get straightness of the line:
     * the "straightness" of a line, interpreted as the property that it minimizes distances between its points
@@ -31,9 +32,7 @@ define([
             // No history yet - set the latestCoords to be the startCoords
             // Delta is zero anyway so no change to cumulativeActualDistance
             // Duplicate the array by value to ensure no funny business
-            this.startCoords = latestCoords.map(function (val) {
-                return val;
-            });
+            this.startCoords = Vector.dup(latestCoords);
         }
     };
     

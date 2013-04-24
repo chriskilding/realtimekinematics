@@ -1,29 +1,8 @@
 "use strict";
 
 define([
-], function () {
-
-    var distanceSquaredBetween = function (a, b) {
-        if (a.length !== b.length) {
-            return null;
-        }
-        
-        var distSquared = a.map(function (aElement, index) {
-            return Math.pow(aElement - b[index], 2);
-        }).reduce(function (c, d) {
-            return c + d;
-        });
-    };
-    
-    var distanceBetween = function (a, b) {
-        var squared = distanceSquaredBetween(a, b);
-        
-        if (squared) {
-            return Math.sqrt(squared);
-        } else {
-            return null;
-        }
-    };
+    "src/util/Vector"
+], function (Vector) {
     
     function PastAndPresent() {
         // A reusable 3vec for holding the coords passed into push method;
@@ -55,11 +34,11 @@ define([
     // Frequently used callback function
     PastAndPresent.prototype.getDistance = function (previousCoords, latestCoords) {
         // Get Euclidean distance between this point and the last
-        return distanceBetween(previousCoords, latestCoords);
+        return Vector.distanceBetween(previousCoords, latestCoords);
     };
     
     PastAndPresent.prototype.getDistanceFromLatest = function (otherCoords) {
-        return distanceBetween(this.latestCoords, otherCoords);
+        return Vector.distanceBetween(this.latestCoords, otherCoords);
     };
     
     return PastAndPresent;

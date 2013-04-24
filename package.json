@@ -1,9 +1,8 @@
 {
   "amd": {},
   "volo": {
-    "baseUrl": "lib",
+    "baseUrl": "vendor",
     "dependencies": {
-      "sylvester": "github:jcoglan/sylvester/0.1.3"
     }
   }
 }

@@ -1,28 +1,7 @@
 /*global require, define, test, expect, strictEqual, location */
 "use strict";
     
-var shim = {
-    "vendor/sylvester": {
-        deps: [],
-        exports: "Sylvester",
-        init: function (bar) {
-            // Because Sylvester deems it necessary to add not just one
-            // but nine globals to the window object
-            // we need this extra init function on its shim
-            return {
-                Sylvester: Sylvester,
-                Vector: Vector,
-                Matrix: Matrix,
-                Line: Line,
-                Plane: Plane,
-                $V: $V,
-                $M: $M,
-                $L: $L,
-                $P: $P
-            };
-        }
-    }
-};
+var shim = {};
 
 // Defer Qunit so RequireJS can work its magic
 // and resolve all modules.
