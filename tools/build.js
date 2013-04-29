@@ -9,5 +9,6 @@
     "wrap": {
         "startFile": "wrap.start",
         "endFile": "wrap.end"
-    }
+    },
+    "optimize": "none"
 }

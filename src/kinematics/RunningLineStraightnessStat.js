@@ -26,8 +26,11 @@ define([
     RunningLineStraightnessStat.prototype.pnpCallback = function (previousCoords, latestCoords) {
         if (this.startCoords) {
             // Get Euclidean distance between this point and the last
-            var distance = this.pnp.getDistance(previousCoords, latestCoords);
-            this.cumulativeActualDistance += distance;
+            try {
+                var distance = this.pnp.getDistance(previousCoords, latestCoords);
+                this.cumulativeActualDistance += distance;
+            } catch (e) {
+            }
         // Defend against nulls
         } else if (latestCoords) {
             // No history yet - set the latestCoords to be the startCoords
