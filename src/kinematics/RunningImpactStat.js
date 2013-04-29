@@ -1,9 +1,9 @@
 // A metric for the force (weight or strength) of a movement
 // NOTE: THIS DOES NOT YET WORK PROPERLY
 define([
-    'src/kinematics/RunningStat',
-    'src/kinematics/NumericalDifferentiator',
-    'src/kinematics/PastAndPresent'
+    "src/kinematics/RunningStat",
+    "src/kinematics/NumericalDifferentiator",
+    "src/kinematics/PastAndPresent"
 ], function (RunningStat, NumericalDifferentiator, PastAndPresent) {
     "use strict";
 
