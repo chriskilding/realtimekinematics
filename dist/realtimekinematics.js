@@ -660,9 +660,9 @@ define('src/kinematics/RunningSpeedStat',[
 });
 // A metric for the Newtonian acceleration of a movement
 define('src/kinematics/RunningAccelerationStat',[
-    'src/kinematics/RunningStat',
-    'src/kinematics/RunningSpeedStat',
-    'src/kinematics/PastAndPresent'
+    "src/kinematics/RunningStat",
+    "src/kinematics/RunningSpeedStat",
+    "src/kinematics/PastAndPresent"
 ], function (RunningStat, RunningSpeedStat, PastAndPresent) {
     
 
@@ -946,9 +946,9 @@ define('src/kinematics/NumericalDifferentiator',[
 // A metric for the force (weight or strength) of a movement
 // NOTE: THIS DOES NOT YET WORK PROPERLY
 define('src/kinematics/RunningImpactStat',[
-    'src/kinematics/RunningStat',
-    'src/kinematics/NumericalDifferentiator',
-    'src/kinematics/PastAndPresent'
+    "src/kinematics/RunningStat",
+    "src/kinematics/NumericalDifferentiator",
+    "src/kinematics/PastAndPresent"
 ], function (RunningStat, NumericalDifferentiator, PastAndPresent) {
     
 
