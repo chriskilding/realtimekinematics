@@ -20,16 +20,6 @@ define([
         return (rval);
     }
     
-    // Rate at which velocity changes with time
-    // is d^2 x / dt^2 as delta t approaches 0
-    // (Second derivative in terms of displacement)
-    function InstantaneousAccWithDisplacement(x, t) {
-        var rval = new NumericalDifferentiator.point();
-        
-        rval.x = v;
-        rval.y = v / t;
-        return (rval);
-    }
     
     function RunningImpactStat() {
         this.runningStat = new RunningStat();
