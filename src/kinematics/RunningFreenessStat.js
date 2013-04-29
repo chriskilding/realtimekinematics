@@ -48,7 +48,10 @@ define([
                 that.vecA = firstJoint.data.position;
                 that.vecB = secondJoint.data.position;
                 
-                angle = Vector.angleBetween(that.vecA, that.vecB);
+                try {
+                    angle = Vector.angleBetween(that.vecA, that.vecB);
+                } catch (e) {
+                }
             }
             
             return angle;

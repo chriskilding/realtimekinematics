@@ -28,7 +28,10 @@ define([
         }
         
         // Update the currentCoords
-        this.previousCoords = coords;
+        // Defend against nulls
+        if (coords) {
+            this.previousCoords = coords;
+        }
         
         return returnVal;
     };

@@ -28,7 +28,8 @@ define([
             // Get Euclidean distance between this point and the last
             var distance = this.pnp.getDistance(previousCoords, latestCoords);
             this.cumulativeActualDistance += distance;
-        } else {
+        // Defend against nulls
+        } else if (latestCoords) {
             // No history yet - set the latestCoords to be the startCoords
             // Delta is zero anyway so no change to cumulativeActualDistance
             // Duplicate the array by value to ensure no funny business
@@ -45,8 +46,13 @@ define([
         
         if (this.startCoords) {
             var displacement = this.pnp.getDistanceFromLatest(this.startCoords);
+
             // The euc. distances between each actual point added together = actual
-            delta = Math.abs(displacement - this.cumulativeActualDistance);
+            // Guard against nulls
+            if (displacement && this.cumulativeActualDistance) {
+                delta = Math.abs(displacement - this.cumulativeActualDistance);
+                console.log('delta', delta);
+            }
         }
         
         return delta;
