@@ -1,18 +1,15 @@
-"use strict";
-
 define([
 ], function () {
-
+    "use strict";
+    
     var distanceSquaredBetween = function (a, b) {
-        if (a.length !== b.length) {
-            return null;
+        if (a.length === b.length) {
+            return a.map(function (aElement, index) {
+                return Math.pow(aElement - b[index], 2);
+            }).reduce(function (c, d) {
+                return c + d;
+            });
         }
-        
-        var distSquared = a.map(function (aElement, index) {
-            return Math.pow(aElement - b[index], 2);
-        }).reduce(function (c, d) {
-            return c + d;
-        });
     };
     
     var distanceBetween = function (a, b) {
@@ -20,21 +17,17 @@ define([
         
         if (squared) {
             return Math.sqrt(squared);
-        } else {
-            return null;
         }
     };
     
     var dot = function (a, b) {
-        if (a.length !== b.length) {
-            return null;
+        if (a.length === b.length) {
+            return a.map(function (aElem, index) {
+                return aElem * b[index];
+            }).reduce(function (c, d) {
+                return c + d;
+            });
         }
-        
-        return a.map(function (aElem, index) {
-            return aElem * b[index];
-        }).reduce(function (c, d) {
-            return c + d;
-        });
     };
     
     var dup = function (vec) {
