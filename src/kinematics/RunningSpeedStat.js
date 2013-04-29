@@ -17,11 +17,14 @@ define([
     RunningSpeedStat.prototype.push = function (coords) {
         // Get Euclidean distance between this point and the last
         // (If this is the first point, distance will be zero)
-        var distance = this.pnp.push(coords, this.pnp.getDistance, this);
-        
-        // and then add it to the running stat
-        this.runningStat.push(distance);
-        return distance;
+        try {
+            var distance = this.pnp.push(coords, this.pnp.getDistance, this);
+            
+            // and then add it to the running stat
+            this.runningStat.push(distance);
+            return distance;
+        } catch (e) {
+        }
     };
     
     RunningSpeedStat.prototype.getMetric = function () {

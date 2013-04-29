@@ -636,11 +636,14 @@ define('src/kinematics/RunningSpeedStat',[
     RunningSpeedStat.prototype.push = function (coords) {
         // Get Euclidean distance between this point and the last
         // (If this is the first point, distance will be zero)
-        var distance = this.pnp.push(coords, this.pnp.getDistance, this);
-        
-        // and then add it to the running stat
-        this.runningStat.push(distance);
-        return distance;
+        try {
+            var distance = this.pnp.push(coords, this.pnp.getDistance, this);
+            
+            // and then add it to the running stat
+            this.runningStat.push(distance);
+            return distance;
+        } catch (e) {
+        }
     };
     
     RunningSpeedStat.prototype.getMetric = function () {
@@ -1045,7 +1048,7 @@ define('src/kinematics/RunningLineStraightnessStat',[
         // If no history yet the delta will be zero
         var delta = 0.0;
         
-        if (this.startCoords) {
+        try {
             var displacement = this.pnp.getDistanceFromLatest(this.startCoords);
 
             // The euc. distances between each actual point added together = actual
@@ -1053,6 +1056,7 @@ define('src/kinematics/RunningLineStraightnessStat',[
             if (displacement && this.cumulativeActualDistance) {
                 delta = Math.abs(displacement - this.cumulativeActualDistance);
             }
+        } catch (e) {
         }
         
         return delta;

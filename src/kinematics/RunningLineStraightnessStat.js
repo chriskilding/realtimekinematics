@@ -47,7 +47,7 @@ define([
         // If no history yet the delta will be zero
         var delta = 0.0;
         
-        if (this.startCoords) {
+        try {
             var displacement = this.pnp.getDistanceFromLatest(this.startCoords);
 
             // The euc. distances between each actual point added together = actual
@@ -55,6 +55,7 @@ define([
             if (displacement && this.cumulativeActualDistance) {
                 delta = Math.abs(displacement - this.cumulativeActualDistance);
             }
+        } catch (e) {
         }
         
         return delta;
