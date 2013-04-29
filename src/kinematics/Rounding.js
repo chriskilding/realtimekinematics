@@ -1,5 +1,3 @@
-"use strict";
-
 // Rounding is a collection of helpers for taking
 // a bunch of vectors and producing a single vector
 // from them, composed of the highest / lowest /
@@ -7,6 +5,8 @@
 // It also enumerates the 'rounding' strategies.
 define([
 ], function () {
+    "use strict";
+    
     var strategies = {
         max: 1,
         min: 2,

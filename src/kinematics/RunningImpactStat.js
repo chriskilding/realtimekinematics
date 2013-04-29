@@ -1,5 +1,3 @@
-"use strict";
-
 // A metric for the force (weight or strength) of a movement
 // NOTE: THIS DOES NOT YET WORK PROPERLY
 define([
@@ -7,6 +5,7 @@ define([
     'src/kinematics/NumericalDifferentiator',
     'src/kinematics/PastAndPresent'
 ], function (RunningStat, NumericalDifferentiator, PastAndPresent) {
+    "use strict";
 
     // Rate at which velocity changes with time
     // is dv/dt as delta t approaches 0

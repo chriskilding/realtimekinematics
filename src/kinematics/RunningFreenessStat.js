@@ -1,5 +1,3 @@
-"use strict";
-
 // Monitors freeness or boundness for a 'system' of joints
 // e.g. hand, wrist, elbow, shoulder
 define([
@@ -7,6 +5,7 @@ define([
     'src/kinematics/Rounding',
     "src/util/Vector"
 ], function (RunningArrayStat, Rounding, Vector) {
+    "use strict";
     
     // pass in an array of the associated Joint pairs you'll track
     // for a hand that would be:

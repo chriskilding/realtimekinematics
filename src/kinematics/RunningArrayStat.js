@@ -1,5 +1,3 @@
-"use strict";
-
 // A RunningArrayStat performs the same function
 // as a RunningStat, but can accept whole vectors
 // rather than just individual numerical values.
@@ -7,7 +5,8 @@ define([
     'src/kinematics/RunningStat',
     'src/kinematics/Rounding'
 ], function (RunningStat, Rounding) {
-  
+    "use strict";
+
     // Rounding strategy you want applied
     // when calculating overall mean, variance, or stddev
     // at the level of the whole array, all functions still operate in O(1) time

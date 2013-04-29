@@ -1,5 +1,3 @@
-"use strict";
-
 // Monitors how much an object is moving over
 // time using an EWMA. Lower values indicate
 // the object is relatively stationary; higher
@@ -8,7 +6,8 @@ define([
     'src/kinematics/PastAndPresent',
     'src/kinematics/RollingAverage'
 ], function (PastAndPresent, RollingAverage) {
-  
+    "use strict";
+
     function RunningSteadinessStat() {
         this.pnp = new PastAndPresent();
         this.avg = new RollingAverage(0.9);

@@ -1,5 +1,3 @@
-"use strict";
-
 // The core of several other modules in this library, RunningStat
 // accepts new numerical data through push(), and computes some
 // intermediate values in O(1) time that allow it to then compute
@@ -11,6 +9,7 @@
 // available at http://www.johndcook.com/standard_deviation.html
 define([
 ], function () {
+    "use strict";
 
     function RunningStat() {
         this.m_n = 0;

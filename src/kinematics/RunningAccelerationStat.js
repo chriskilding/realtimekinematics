@@ -1,11 +1,10 @@
-"use strict";
-
 // A metric for the Newtonian acceleration of a movement
 define([
     'src/kinematics/RunningStat',
     'src/kinematics/RunningSpeedStat',
     'src/kinematics/PastAndPresent'
 ], function (RunningStat, RunningSpeedStat, PastAndPresent) {
+    "use strict";
 
     // We look at the 'difference of differences'
     // as described in http://research.microsoft.com/pubs/172555/KinectGaitEMBC2012.pdf

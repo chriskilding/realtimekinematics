@@ -1,5 +1,3 @@
-"use strict";
-
 // Performs inter-frame analysis of the positions
 // of vectors to determine the straight-line distance
 // which the object has travelled during the time
@@ -9,6 +7,7 @@ define([
     'src/kinematics/RunningStat',
     'src/kinematics/PastAndPresent'
 ], function (RunningStat, PastAndPresent) {
+    "use strict";
   
     function RunningSpeedStat() {
         this.pnp = new PastAndPresent();

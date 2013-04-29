@@ -1,9 +1,9 @@
-"use strict";
-
 define([
     'src/kinematics/PastAndPresent',
     "src/util/Vector"
 ], function (PastAndPresent, Vector) {
+    "use strict";
+
     /*
     * One way to get straightness of the line:
     * the "straightness" of a line, interpreted as the property that it minimizes distances between its points
@@ -51,7 +51,6 @@ define([
             // Guard against nulls
             if (displacement && this.cumulativeActualDistance) {
                 delta = Math.abs(displacement - this.cumulativeActualDistance);
-                console.log('delta', delta);
             }
         }
         

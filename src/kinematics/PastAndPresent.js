@@ -1,5 +1,3 @@
-"use strict";
-
 // Useful when measuring inter-frame deltas, a PastAndPresent
 // instance holds a continuously updated reference to the
 // vector from the frame before, so that when new data rolls
@@ -10,6 +8,7 @@
 define([
     "src/util/Vector"
 ], function (Vector) {
+    "use strict";
     
     function PastAndPresent() {
         // A reusable 3vec for holding the coords passed into push method;
