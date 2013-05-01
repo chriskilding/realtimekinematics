@@ -1,6 +1,6 @@
 define(function (require) {
 
-	// Import depdendencies.
+	// Import dependencies.
 	var pnpLib = require("src/kinematics/PastAndPresent");
 	
   var pnp;

@@ -1,6 +1,6 @@
 define(function (require) {
 
-	// Import depdendencies.
+	// Import dependencies.
 	var rollavg = require("src/kinematics/RollingAverage");
 	
   var avg;
