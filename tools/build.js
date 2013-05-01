@@ -1,9 +1,9 @@
 {
     "baseUrl": "../",
     "paths": {
-        "runningkinematics": "runningkinematics"
+        "realtimekinematics": "realtimekinematics"
     },
-    "include": ["tools/almond", "runningkinematics"],
+    "include": ["tools/almond", "realtimekinematics"],
     "exclude": [],
     "out": "../dist/realtimekinematics.js",
     "wrap": {

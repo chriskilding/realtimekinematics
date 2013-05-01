@@ -1106,7 +1106,7 @@ define('src/kinematics/RunningSteadinessStat',[
 /*global define */
 
 // The main module that defines the public interface for this library.
-define('runningkinematics',['require','src/kinematics/PastAndPresent','src/kinematics/RollingAverage','src/kinematics/Rounding','src/kinematics/RunningAccelerationStat','src/kinematics/RunningArrayStat','src/kinematics/RunningFreenessStat','src/kinematics/RunningImpactStat','src/kinematics/RunningLineStraightnessStat','src/kinematics/RunningSpeedStat','src/kinematics/RunningStat','src/kinematics/RunningSteadinessStat'],function (require) {
+define('realtimekinematics',['require','src/kinematics/PastAndPresent','src/kinematics/RollingAverage','src/kinematics/Rounding','src/kinematics/RunningAccelerationStat','src/kinematics/RunningArrayStat','src/kinematics/RunningFreenessStat','src/kinematics/RunningImpactStat','src/kinematics/RunningLineStraightnessStat','src/kinematics/RunningSpeedStat','src/kinematics/RunningStat','src/kinematics/RunningSteadinessStat'],function (require) {
     
 
     //Return the module value.
@@ -1131,5 +1131,5 @@ define('runningkinematics',['require','src/kinematics/PastAndPresent','src/kinem
     // to trigger factory functions,
     // get the final module value,
     // and export it as the public value.
-    return require('runningkinematics');
+    return require('realtimekinematics');
 }));

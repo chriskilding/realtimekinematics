@@ -12,7 +12,7 @@ require.config({
     baseUrl: '../',
     shim: shim,
     paths: {
-        "runningkinematics": "runningkinematics"
+        "realtimekinematics": "realtimekinematics"
     }
 });
 //Override if in "dist" mode
@@ -20,7 +20,7 @@ if (location.href.indexOf('-dist') !== -1) {
     //Set location of mocap to the dist location
     require.config({
         paths: {
-            'runningkinematics': 'dist/runningkinematics'
+            'realtimekinematics': 'dist/realtimekinematics'
         }
     });
 }
