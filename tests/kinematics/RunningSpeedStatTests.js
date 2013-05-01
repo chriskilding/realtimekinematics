@@ -1,34 +1,35 @@
 define(function (require) {
-
+    "use strict";
+    
 	// Import dependencies.
 	var speedstatlib = require("src/kinematics/RunningSpeedStat");
 	
-  var speedStat;
+    var speedStat;
   
 	// Define the QUnit module and lifecycle.
-	QUnit.module("kinematics/RunningSpeedStat", { 
-		setup: function () {
-      speedStat = new speedstatlib();
-		},
-		teardown: function () {
-      speedStat = null;
-		}
+	QUnit.module("kinematics/RunningSpeedStat", {
+        setup: function () {
+            speedStat = new speedstatlib();
+        },
+        teardown: function () {
+            speedStat = null;
+        }
 	});
 	
-	QUnit.test("getMetric - resets to zero upon clearing", function () {     
+	QUnit.test("getMetric - resets to zero upon clearing", 1, function (assert) {
         speedStat.push([20, 20, 0]);
         speedStat.clear();
                 
-        QUnit.equal(speedStat.getMetric(), 0, true);    
+        assert.equal(speedStat.getMetric(), 0, true);
 	});
 	
-	QUnit.test("getMetric - starts at zero", function () {             
-        QUnit.equal(speedStat.getMetric(), 0, true);    
+	QUnit.test("getMetric - starts at zero", 1, function (assert) {
+        assert.equal(speedStat.getMetric(), 0, true);
 	});
   
-	QUnit.test("getMetric - add one data point, still zero", function () { 
+	QUnit.test("getMetric - add one data point, still zero", 1, function (assert) {
         speedStat.push([20, 20, 0]);
-        QUnit.equal(speedStat.getMetric(), 0, true);  
+        assert.equal(speedStat.getMetric(), 0, true);
 	});
 	
 });
