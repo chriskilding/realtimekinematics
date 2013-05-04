@@ -770,8 +770,8 @@ define('src/kinematics/RunningArrayStat',[
 // Monitors freeness or boundness for a 'system' of joints
 // e.g. hand, wrist, elbow, shoulder
 define('src/kinematics/RunningFreenessStat',[
-    'src/kinematics/RunningArrayStat',
-    'src/kinematics/Rounding',
+    "src/kinematics/RunningArrayStat",
+    "src/kinematics/Rounding",
     "src/util/Vector"
 ], function (RunningArrayStat, Rounding, Vector) {
     
@@ -787,9 +787,6 @@ define('src/kinematics/RunningFreenessStat',[
         this.jointPairs = jointPairs || [];
         // Need as many running stats as we do joints tracked
         this.rstat = new RunningArrayStat(this.jointPairs.length);
-        
-        this.vecA = [0, 0, 0];
-        this.vecB = [0, 0, 0];
     }
     
     // Needs WHOLE skeleton
@@ -797,7 +794,6 @@ define('src/kinematics/RunningFreenessStat',[
         // We will get the ROTATION values for every point;
         // position may change as the whole 'joint system' moves through space,
         // but rotation of each joint will stay same/similar if movement is bound
-        var that = this;
         var anglesArray = this.jointPairs.map(function (pair) {
             // Which joint IDs are we talking about
             // Get the corresponding data off the skeleton
@@ -813,11 +809,11 @@ define('src/kinematics/RunningFreenessStat',[
             var angle = null;
             
             if (firstJoint.data && secondJoint.data) {
-                that.vecA = firstJoint.data.position;
-                that.vecB = secondJoint.data.position;
-                
                 try {
-                    angle = Vector.angleBetween(that.vecA, that.vecB);
+                    angle = Vector.angleBetween(
+                        firstJoint.data.position,
+                        secondJoint.data.position
+                    );
                 } catch (e) {
                 }
             }
@@ -828,8 +824,8 @@ define('src/kinematics/RunningFreenessStat',[
         // Now push it into the corresponding RunningFreenessStat 
         // position may change as the whole 'joint system' moves through space,
         // but angle between each joint pair will stay same/similar if movement is bound
-        //console.log('anglesArray', anglesArray);
-        that.rstat.push(anglesArray);
+        // console.log('anglesArray', anglesArray);
+        this.rstat.push(anglesArray);
         
         return this.getValue();
     };
@@ -841,8 +837,6 @@ define('src/kinematics/RunningFreenessStat',[
     
     RunningFreenessStat.prototype.clear = function () {
         this.rstat.clear();
-        // vecA and vecB don't need to be cleared
-        // they get overwritten before use anyway
     };
     
     return RunningFreenessStat;
