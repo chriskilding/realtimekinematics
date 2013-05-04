@@ -37,7 +37,8 @@ define([
     };
 
     var modulus = function (vec) {
-        return Math.sqrt(dot(vec));
+        // Remember, pass vec twice to dot
+        return Math.sqrt(dot(vec, vec));
     };
     
     var toUnitVector = function (vec) {
@@ -58,7 +59,7 @@ define([
         // (1) normalize each vector
         var normA = toUnitVector(a);
         var normB = toUnitVector(b);
-        
+                
         // (2) compute the dot product
         var product = dot(normA, normB);
         

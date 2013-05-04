@@ -388,7 +388,8 @@ define('src/util/Vector',[
     };
 
     var modulus = function (vec) {
-        return Math.sqrt(dot(vec));
+        // Remember, pass vec twice to dot
+        return Math.sqrt(dot(vec, vec));
     };
     
     var toUnitVector = function (vec) {
@@ -409,7 +410,7 @@ define('src/util/Vector',[
         // (1) normalize each vector
         var normA = toUnitVector(a);
         var normB = toUnitVector(b);
-        
+                
         // (2) compute the dot product
         var product = dot(normA, normB);
         
@@ -791,34 +792,26 @@ define('src/kinematics/RunningFreenessStat',[
     
     // Needs WHOLE skeleton
     RunningFreenessStat.prototype.push = function (skeleton) {
-        // We will get the ROTATION values for every point;
         // position may change as the whole 'joint system' moves through space,
         // but rotation of each joint will stay same/similar if movement is bound
         var anglesArray = this.jointPairs.map(function (pair) {
             // Which joint IDs are we talking about
             // Get the corresponding data off the skeleton
-            var firstJoint = {};
-            firstJoint.id = pair[0];
-            firstJoint.data = skeleton[firstJoint.id];
+            var firstJoint = skeleton[pair[0]];
             
-            var secondJoint = {};
-            secondJoint.id = pair[1];
-            secondJoint.data = skeleton[secondJoint.id];
+            var secondJoint = skeleton[pair[1]];
             
-            // Safety
-            var angle = null;
             
-            if (firstJoint.data && secondJoint.data) {
+            if (firstJoint && secondJoint) {
+                // console.log('first', firstJoint, 'snd', secondJoint);
                 try {
-                    angle = Vector.angleBetween(
-                        firstJoint.data.position,
-                        secondJoint.data.position
+                    return Vector.angleBetween(
+                        firstJoint.position,
+                        secondJoint.position
                     );
                 } catch (e) {
                 }
             }
-            
-            return angle;
         });
     
         // Now push it into the corresponding RunningFreenessStat 
